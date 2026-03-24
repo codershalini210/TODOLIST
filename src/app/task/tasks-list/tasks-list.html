@@ -1,1 +1,17 @@
-<p>tasks-list works!</p>
+<header>
+    <h2>My Task List</h2>
+    <p> 
+        <select (change)="onChangeTasksFilter(filter.value)" #filter>
+            <option value="all">ALL</option>
+            <option *ngFor="let option of taskstatusOption"
+            [value]="option.value">
+                {{option.text}}
+            </option>
+        </select>
+    </p>
+</header>
+<ul>
+    <li *ngFor="let task of tasks()">
+        <app-task-item [task]="task"></app-task-item>
+    </li>
+</ul>

@@ -1,1 +1,13 @@
-<p>new-task works!</p>
+<p>Add New Task</p>
+<form (ngSubmit)="onAddTask(title.value,description.value)" #form>
+    <p>
+        <label>Title</label>
+        <input type="text" id="title" name="title" #title>
+    </p>
+    <p>
+        <label>Description</label>
+        <textarea type="text" id="description" name="description" #description></textarea>
+    </p>
+    <p id="actions"></p>
+    <button>Add Task</button>
+</form>
